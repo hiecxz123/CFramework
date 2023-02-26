@@ -48,16 +48,10 @@ public class ThirdPersonCamera : MonoBehaviour
     private float rotateY = 0f;
     private float currentHeight;
     private float cullingDistance;
-    private float checkHeightRadius = 0.4f;
-    private float clipPlaneMargin = 0f;
+
     private float forward = -1f;
     private float xMinLimit = -360f;
     private float xMaxLimit = 360f;
-    private float cullingHeight = 0.2f;
-    private float cullingMinDist = 0.1f;
-
-
-
 
     void Start()
     {
