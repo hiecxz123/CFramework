@@ -58,3 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+/Assets/StandardPBR
+/Assets/StandardPBR.meta
+/Assets/Test
+/Assets/Test.meta
+/.idea
