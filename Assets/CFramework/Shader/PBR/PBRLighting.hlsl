@@ -2,6 +2,16 @@ float Pow4(half x) {
     return x * x * x * x;
 }
 
+inline half3 RotateDirection(half3 R, half degrees)
+{
+	float3 reflUVW = R;
+	half theta = degrees * PI / 180.0f;
+	half costha = cos(theta);
+	half sintha = sin(theta);
+	reflUVW = half3(reflUVW.x * costha - reflUVW.z * sintha, reflUVW.y, reflUVW.x * sintha + reflUVW.z * costha);
+	return reflUVW;
+}
+
 float3 Diffuse_Lambert(float3 DiffuseColor) {
     return DiffuseColor * (1 / PI);
 }
@@ -110,6 +120,31 @@ float3 N, float3 V, out float3 IndirectLighting) {
     //float4 rgb_mip = SAMPLE_TEXTURECUBE_LOD(unity_SpecCube0,samplerunity_SpecCube0, R, mip);
     half4 rgb_mip = SAMPLE_TEXTURECUBE(unity_SpecCube0, samplerunity_SpecCube0, R);
     float3 EnvSpecularPrefilted = DecodeHDREnvironment(rgb_mip, unity_SpecCube0_HDR);
+
+    float2 env_brdf = EnvBRDFApprox(Roughness, NV);
+    float3 Specular_Indirect = EnvSpecularPrefilted * (F_IndirectLight * env_brdf.r + env_brdf.g);
+    float3 KD_IndirectLight = float3(1, 1, 1) - F_IndirectLight;
+    KD_IndirectLight *= 1 - Metallic;
+    float3 irradianceSH = SampleSH(N);
+    float3 Diffuse_Indirect = irradianceSH * BaseMapColor * KD_IndirectLight; //Ã»ÓÐ³ýÒÔ PI
+    IndirectLighting = (Diffuse_Indirect + Specular_Indirect) * Occlusion;
+}
+
+void IndirectLighting_floatTest(float3 BaseMapColor, float Metallic, float Roughness, float Occlusion,
+float3 N, float3 V,float3 WorldPos, out float3 IndirectLighting) {
+    IndirectLighting = float3(0, 0, 0);
+    float3 DiffuseColor = lerp(BaseMapColor, float3(0.0, 0.0, 0.0), Metallic);
+    float3 SpecularColor = lerp(float3(0.04, 0.04, 0.04), BaseMapColor, Metallic);
+
+    float3 R = reflect(-V, N);
+    float NV = saturate(abs(dot(N, V)) + 1e-5);
+    float3 F_IndirectLight = FresnelSchlickRoughness(NV, SpecularColor, Roughness);
+    float mip = Roughness * (1.7 - 0.7 * Roughness) * UNITY_SPECCUBE_LOD_STEPS;
+
+    //float4 rgb_mip = SAMPLE_TEXTURECUBE_LOD(unity_SpecCube0,samplerunity_SpecCube0, R, mip);
+    half4 rgb_mip = SAMPLE_TEXTURECUBE(unity_SpecCube0, samplerunity_SpecCube0, R);
+    float3 EnvSpecularPrefilted = DecodeHDREnvironment(rgb_mip, unity_SpecCube0_HDR);
+    EnvSpecularPrefilted = GlossyEnvironmentReflection(R,WorldPos,Roughness,Occlusion);
 
     float2 env_brdf = EnvBRDFApprox(Roughness, NV);
     float3 Specular_Indirect = EnvSpecularPrefilted * (F_IndirectLight * env_brdf.r + env_brdf.g);

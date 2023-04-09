@@ -58,6 +58,14 @@ Shader "Custom_URP/StandardPBR"
                 UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
+            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _MAIN_LIGHT_SHADOWS_SCREEN
+            #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
+            #pragma multi_compile_fragment _ _ADDITIONAL_LIGHT_SHADOWS
+            #pragma multi_compile_fragment _ _REFLECTION_PROBE_BLENDING
+            #pragma multi_compile_fragment _ _REFLECTION_PROBE_BOX_PROJECTION
+            #pragma multi_compile_fragment _ _SHADOWS_SOFT
+            #pragma multi_compile_fragment _ _SCREEN_SPACE_OCCLUSION
+
             #pragma multi_compile_instancing
             #pragma instancing_options renderinglayer
             #pragma multi_compile _ DOTS_INSTANCING_ON
@@ -142,11 +150,11 @@ Shader "Custom_URP/StandardPBR"
 
                 //直接光
                 float3 DirectMainLight = float3(0, 0, 0);
-                DirectLighting_float(DiffuseColor,Metallic,Roughness,N,V,DirectMainLight);
+                DirectLighting_float(BaseMapColor,Metallic,Roughness,N,V,DirectMainLight);
                 //间接光
                 float3 IndirectLight = float3(0, 0, 0);
-                IndirectLighting_float(DiffuseColor,Metallic,Roughness,Occlusion,N,V,IndirectLight);
-                
+                IndirectLighting_floatTest(BaseMapColor,Metallic,Roughness,Occlusion,N,V,WorldPos,IndirectLight);
+                //IndirectLighting_float(BaseMapColor,Metallic,Roughness,Occlusion,N,V,IndirectLight);
                 return float4(DirectMainLight+IndirectLight,1);
                 
             
