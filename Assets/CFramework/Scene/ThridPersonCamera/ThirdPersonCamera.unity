@@ -531,12 +531,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2079414024}
-  smoothCameraRotation: 12
+  smoothCameraRotation: 20
   lockCamera: 0
   rightOffset: 0
   defaultDistance: 2.5
   height: 1.4
-  smoothFollow: 10
+  smoothFollow: 0
   xMouseSensitivity: 3
   yMouseSensitivity: 3
   yMinLimit: -40
@@ -589,6 +589,7 @@ GameObject:
   - component: {fileID: 2079414023}
   - component: {fileID: 2079414022}
   - component: {fileID: 2079414021}
+  - component: {fileID: 2079414025}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -674,3 +675,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2079414025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079414020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d7a34b55cb5454d84553800dc5ba46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

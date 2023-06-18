@@ -34,6 +34,7 @@ public class UIBaseScriptsCreater : Editor
         List<string> variableTypeList = new List<string>();
         List<string> transPathStrList = new List<string>();
         Transform[] trans = item.GetComponentsInChildren<Transform>();
+        //TODO: 如何获取单个物体多个组件
         for (int i = 0; i < trans.Length; i++)
         {
             string[] str = trans[i].name.Split('_');
@@ -42,10 +43,13 @@ public class UIBaseScriptsCreater : Editor
                 continue;
             }
             string componentName = "Transform";
-            switch(str[str.Length-1].ToLower())
+            switch(str[1].ToLower())
             {
                 case "img":
                     componentName = "Image";
+                    break;
+                case "raw":
+                    componentName = "RawImage";
                     break;
                 case "sli":
                     componentName = "Slider";
@@ -58,7 +62,12 @@ public class UIBaseScriptsCreater : Editor
                     break;
             }
             //获取变量名
-            variableStrList.Add(trans[i].name);
+            string variableName = "";
+            for(int j=0;j<str.Length-1;j++)
+            {
+                variableName += str[j];
+            }
+            variableStrList.Add("m_"+ variableName);
             if(componentName!="")
             {
                 //获取变量类型名称

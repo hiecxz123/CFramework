@@ -80,13 +80,15 @@ public class ThirdPersonCamera : MonoBehaviour
     }
     private void Update()
     {
+        
+    }
+    private void FixedUpdate()
+    {
         var X = Input.GetAxis("Mouse X");
         var Y = -Input.GetAxis("Mouse Y");
 
         RotateCamera(X, Y);
-    }
-    private void FixedUpdate()
-    {
+
         if (target == null || targetLookAt == null) return;
 
         CameraMovement();
