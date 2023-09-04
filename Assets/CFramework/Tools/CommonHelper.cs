@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
 
-public class CommonTools
+public class CommonHelper
 {
     /// <summary>
     /// ∑¥…‰…ÓøΩ±¥

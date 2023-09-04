@@ -19,13 +19,18 @@ public class StudentExp : StudentBase
     public float weight;
 }
 
+public class StudentList
+{
+    public List<StudentBase> lists = new List<StudentBase>();
+}
+
 public class DeepCopyTest : MonoBehaviour
 {
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
         StudentBase sb = new StudentBase
         {
             id = 1,
@@ -44,7 +49,7 @@ public class DeepCopyTest : MonoBehaviour
             height = 180,
             weight = 100
         };
-
+        #region 浅拷贝测试
         //浅拷贝测试
         StudentBase sb1 = new StudentBase
         {
@@ -63,70 +68,71 @@ public class DeepCopyTest : MonoBehaviour
         UnityEngine.Debug.Log(sb1.name);
         //父类不能强制转换成子类
         //StudentExp se1 = (StudentExp)sb;
+        #endregion
 
-        //深拷贝测试
-        //反射深拷贝
-        StudentBase sb_reflection1 = new StudentBase()
-        {
-            id = 22,
-            name = "d",
-            classId = 4,
-            gender = 0
-        };
-        StudentBase sb_reflection2 = new StudentBase()
-        {
-            id = 33,
-            name = "f",
-            classId = 5,
-            gender = 1
-        };
-        sb_reflection2 = CommonTools.TransReflection<StudentBase, StudentBase>(sb_reflection1);
-        sb_reflection2.name = "change";
-        //输出d,change
-        //通过反射进行深拷贝，sb2和sb3相互独立互不相干
-        UnityEngine.Debug.Log("sb_reflection1.name=" + sb_reflection1.name +
-            "   sb_reflection2.name=" + sb_reflection2.name);
-        //序列化深拷贝
-        StudentBase sb_Serialize1 = new StudentBase()
-        {
-            id = 22,
-            name = "d",
-            classId = 4,
-            gender = 0
-        };
-        StudentBase sb_Serialize2 = new StudentBase()
-        {
-            id = 33,
-            name = "f",
-            classId = 5,
-            gender = 1
-        };
-        sb_Serialize2 = CommonTools.TransSerialize<StudentBase, StudentBase>(sb_Serialize1);
-        sb_Serialize2.name = "change";
-        UnityEngine.Debug.Log("sb_Serialize1.name=" + sb_Serialize1.name +
-            "   sb_Serialize2.name=" + sb_Serialize2.name);
-        //表达式树深拷贝
-        StudentBase sb_exp1 = new StudentBase()
-        {
-            id = 22,
-            name = "d",
-            classId = 4,
-            gender = 0
-        };
-        StudentBase sb_exp2 = new StudentBase()
-        {
-            id = 33,
-            name = "f",
-            classId = 5,
-            gender = 1
-        };
+        #region 深拷贝测试
+        ////反射深拷贝
+        //StudentBase sb_reflection1 = new StudentBase()
+        //{
+        //    id = 22,
+        //    name = "d",
+        //    classId = 4,
+        //    gender = 0
+        //};
+        //StudentBase sb_reflection2 = new StudentBase()
+        //{
+        //    id = 33,
+        //    name = "f",
+        //    classId = 5,
+        //    gender = 1
+        //};
+        //sb_reflection2 = CommonHelper.TransReflection<StudentBase, StudentBase>(sb_reflection1);
+        //sb_reflection2.name = "change";
+        ////输出d,change
+        ////通过反射进行深拷贝，sb2和sb3相互独立互不相干
+        //UnityEngine.Debug.Log("sb_reflection1.name=" + sb_reflection1.name +
+        //    "   sb_reflection2.name=" + sb_reflection2.name);
+        ////序列化深拷贝
+        //StudentBase sb_Serialize1 = new StudentBase()
+        //{
+        //    id = 22,
+        //    name = "d",
+        //    classId = 4,
+        //    gender = 0
+        //};
+        //StudentBase sb_Serialize2 = new StudentBase()
+        //{
+        //    id = 33,
+        //    name = "f",
+        //    classId = 5,
+        //    gender = 1
+        //};
+        //sb_Serialize2 = CommonHelper.TransSerialize<StudentBase, StudentBase>(sb_Serialize1);
+        //sb_Serialize2.name = "change";
+        //UnityEngine.Debug.Log("sb_Serialize1.name=" + sb_Serialize1.name +
+        //    "   sb_Serialize2.name=" + sb_Serialize2.name);
+        ////表达式树深拷贝
+        //StudentBase sb_exp1 = new StudentBase()
+        //{
+        //    id = 22,
+        //    name = "d",
+        //    classId = 4,
+        //    gender = 0
+        //};
+        //StudentBase sb_exp2 = new StudentBase()
+        //{
+        //    id = 33,
+        //    name = "f",
+        //    classId = 5,
+        //    gender = 1
+        //};
 
-        sb_exp2 = CommonTools.TransExp<StudentBase, StudentBase>.Trans(sb_exp1);
-        sb_exp2.name = "change";
-        UnityEngine.Debug.Log("sb_exp1.name=" + sb_exp1.name +
-            "   sb_exp2.name=" + sb_exp2.name);
+        //sb_exp2 = CommonHelper.TransExp<StudentBase, StudentBase>.Trans(sb_exp1);
+        //sb_exp2.name = "change";
+        //UnityEngine.Debug.Log("sb_exp1.name=" + sb_exp1.name +
+        //    "   sb_exp2.name=" + sb_exp2.name);
+        #endregion
 
-        //性能测试 100w数据 
         List<StudentBase> studentBases = new List<StudentBase>();
         for (int i = 0; i < 1000000; i++)
         {
@@ -139,54 +145,94 @@ public class DeepCopyTest : MonoBehaviour
             };
             studentBases.Add(temp);
         }
-        Stopwatch sw = new Stopwatch();
+        #region 性能测试 100w数据 
 
-        //反射 1387ms
-        sw.Start();
-        for (int i = 0; i < studentBases.Count; i++)
-        {
-            StudentBase temp = CommonTools.TransReflection<StudentBase, StudentBase>(studentBases[i]);
-        }
-        sw.Stop();
-        UnityEngine.Debug.Log(string.Format("Reflection total:{0} ms", sw.ElapsedMilliseconds));
-        sw.Reset();
+        //Stopwatch sw = new Stopwatch();
 
-        //序列化 5020ms
-        sw.Start();
-        for (int i = 0; i < studentBases.Count; i++)
-        {
-            StudentBase temp = CommonTools.TransSerialize<StudentBase, StudentBase>(studentBases[i]);
-        }
-        sw.Stop();
-        UnityEngine.Debug.Log(string.Format("Serialize total:{0} ms", sw.ElapsedMilliseconds));
-        sw.Reset();
+        ////反射 1387ms
+        //sw.Start();
+        //for (int i = 0; i < studentBases.Count; i++)
+        //{
+        //    StudentBase temp = CommonTools.TransReflection<StudentBase, StudentBase>(studentBases[i]);
+        //}
+        //sw.Stop();
+        //UnityEngine.Debug.Log(string.Format("Reflection total:{0} ms", sw.ElapsedMilliseconds));
+        //sw.Reset();
+
+        ////序列化 5020ms
+        //sw.Start();
+        //for (int i = 0; i < studentBases.Count; i++)
+        //{
+        //    StudentBase temp = CommonTools.TransSerialize<StudentBase, StudentBase>(studentBases[i]);
+        //}
+        //sw.Stop();
+        //UnityEngine.Debug.Log(string.Format("Serialize total:{0} ms", sw.ElapsedMilliseconds));
+        //sw.Reset();
 
 
-        //表达式树 73ms
-        sw.Start();
-        for (int i = 0; i < studentBases.Count; i++)
-        {
-            StudentBase temp = CommonTools.TransExp<StudentBase, StudentBase>.Trans(studentBases[i]);
-        }
-        sw.Stop();
-        UnityEngine.Debug.Log(string.Format("Exp total:{0} ms", sw.ElapsedMilliseconds));
-        sw.Reset();
+        ////表达式树 73ms
+        //sw.Start();
+        //for (int i = 0; i < studentBases.Count; i++)
+        //{
+        //    StudentBase temp = CommonTools.TransExp<StudentBase, StudentBase>.Trans(studentBases[i]);
+        //}
+        //sw.Stop();
+        //UnityEngine.Debug.Log(string.Format("Exp total:{0} ms", sw.ElapsedMilliseconds));
+        //sw.Reset();
 
-        //直接赋值 147ms
-        sw.Start();
-        for (int i = 0; i < studentBases.Count; i++)
-        {
-            StudentBase temp = new StudentBase()
-            {
-                id = studentBases[i].id,
-                name = studentBases[i].name,
-                gender = studentBases[i].gender,
-                classId = studentBases[i].classId
-            };
-        }
-        sw.Stop();
-        UnityEngine.Debug.Log(string.Format("copy total:{0} ms", sw.ElapsedMilliseconds));
-        sw.Reset();
+        ////直接赋值 147ms
+        //sw.Start();
+        //for (int i = 0; i < studentBases.Count; i++)
+        //{
+        //    StudentBase temp = new StudentBase()
+        //    {
+        //        id = studentBases[i].id,
+        //        name = studentBases[i].name,
+        //        gender = studentBases[i].gender,
+        //        classId = studentBases[i].classId
+        //    };
+        //}
+        //sw.Stop();
+        //UnityEngine.Debug.Log(string.Format("copy total:{0} ms", sw.ElapsedMilliseconds));
+        //sw.Reset();
+        #endregion
+
+        #region List深拷贝性能测试100w数据 (直接使用List<T>进行拷贝，报错；将List<T>包含进类中，编辑器崩溃)
+        //StudentList studentList = new StudentList();
+        //studentList.lists = studentBases;
+
+        //Stopwatch sw = new Stopwatch();
+        ////反射深拷贝
+        //sw.Start();
+        //StudentList studentBases_reflection
+        //    = CommonHelper.TransReflection<StudentList, StudentList> (studentList);
+        //sw.Stop();
+        //UnityEngine.Debug.Log(string.Format("Reflection copy total:{0} ms", sw.ElapsedMilliseconds));
+        //sw.Reset();
+        //studentBases_reflection.lists[3].name = "change1";
+        //UnityEngine.Debug.Log(studentList.lists[3].name);
+
+        ////序列化深拷贝
+        //sw.Start();
+        //StudentList studentBases_Serialize
+        //    = CommonHelper.TransSerialize<StudentList, StudentList>(studentList);
+        //sw.Stop();
+        //UnityEngine.Debug.Log(string.Format("Serialize copy total:{0} ms", sw.ElapsedMilliseconds));
+        //sw.Reset();
+        //studentBases_reflection.lists[3].name = "change2";
+        //UnityEngine.Debug.Log(studentList.lists[3].name);
+
+        ////表达式树深拷贝
+        //sw.Start();
+        //StudentList studentBases_exp
+        //    = CommonHelper.TransExp<StudentList, StudentList>.Trans(studentList);
+        //sw.Stop();
+        //UnityEngine.Debug.Log(string.Format("exp copy total:{0} ms", sw.ElapsedMilliseconds));
+        //sw.Reset();
+        //studentBases_reflection.lists[3].name = "change3";
+        //UnityEngine.Debug.Log(studentList.lists[3].name);
+        #endregion
+
     }
 
     // Update is called once per frame
