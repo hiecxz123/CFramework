@@ -58,9 +58,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-/Assets/StandardPBR
-/Assets/StandardPBR.meta
-/Assets/Test
-/Assets/Test.meta
-/.idea
+
+/.idea/.idea.CFramework/.idea/.gitignore
+/.idea/.idea.CFramework/.idea/encodings.xml
+/.idea/.idea.CFramework/.idea/indexLayout.xml
+/.idea/.idea.CFramework/.idea/riderModule.iml
+/.idea/.idea.CFramework/.idea/vcs.xml
 /ThirdTools/settings.txt
