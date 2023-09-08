@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
 
-public class CommonHelper
+public class DeepCopyHelper
 {
     /// <summary>
     /// 反射深拷贝
@@ -42,7 +42,7 @@ public class CommonHelper
     }
 
     /// <summary>
-    /// 表达式树深拷贝
+    /// 表达式树深拷贝，无法对array,list进行深拷贝
     /// </summary>
     /// <typeparam name="TIn"></typeparam>
     /// <typeparam name="TOut"></typeparam>
