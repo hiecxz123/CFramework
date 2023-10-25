@@ -15,7 +15,7 @@ public class TestData
 public class GenerateCSharpJsonTest : MonoBehaviour
 {
     [SerializeField]
-    public List<Sheet1> lists = new List<Sheet1>();
+    //public List<Sheet1> lists = new List<Sheet1>();
     // Start is called before the first frame update
     void Start()
     {
