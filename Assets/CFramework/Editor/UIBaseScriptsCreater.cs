@@ -17,6 +17,11 @@ public class UIBaseScriptsCreater : Editor
     public static void UIComponentFinder()
     {
         GameObject item = Selection.activeGameObject;
+        if(item==null)
+        {
+            Debug.LogError("No GameObject is Selected!");
+            return;
+        }
         string className = item.name;
         string scriptPath = Application.dataPath + "/AutoUIScripts";
 
@@ -43,6 +48,7 @@ public class UIBaseScriptsCreater : Editor
                 continue;
             }
             string componentName = "Transform";
+            //此处添加需查找的组件
             switch(str[1].ToLower())
             {
                 case "img":
