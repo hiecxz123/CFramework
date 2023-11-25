@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
                 Debug.Log(name+":"+obj.ReadValue<Vector2>());
                 dir = obj.ReadValue<Vector2>();
                 break;
-            case "Fire":
+            case "Jump":
                 Debug.Log(name + ":" +"Fire");
                 break;
         }
