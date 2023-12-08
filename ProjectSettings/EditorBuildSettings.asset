@@ -8,4 +8,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CFramework/Scene/InputSystem/InputSystemChangeKey/ChangeKey.unity
     guid: 962a19a27e92f834d8ac6d2ae634eb33
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: db851cf6728b93946a1f6f0a31d27c7f, type: 2}
