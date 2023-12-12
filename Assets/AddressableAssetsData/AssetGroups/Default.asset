@@ -15,11 +15,16 @@ MonoBehaviour:
   m_GroupName: Default
   m_Data:
     m_SerializedData: []
-  m_GUID: d65750c497482c144bd1b74a5a0fe02f
-  m_SerializeEntries: []
+  m_GUID: 1627f2bb0eada834f8091f6f82999347
+  m_SerializeEntries:
+  - m_GUID: 96c34a50971857b4f98dccab796b5b99
+    m_Address: Assets/CFramework/Scene/Addressables/Res/Scene/TestScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: 327e94ab3ceada04ca2143d3276f7cf7, type: 2}
+  m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 85d61548d07ea064ba18ea9786ea22f1, type: 2}
-    - {fileID: 11400000, guid: a4a0250e64fda804d80573759ef142b3, type: 2}
+    - {fileID: 11400000, guid: 6f448da29f938c44a83af18684a9ec95, type: 2}
+    - {fileID: 11400000, guid: 9a75378a4995dcd4cbdf03d42c3b62d5, type: 2}

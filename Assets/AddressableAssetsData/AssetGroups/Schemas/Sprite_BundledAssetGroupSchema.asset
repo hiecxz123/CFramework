@@ -1,22 +1,8 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6802431905643804052
+--- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
-  m_Name: ContentUpdateGroupSchema
-  m_EditorClassIdentifier: 
-  m_Group: {fileID: 0}
-  m_StaticContent: 0
---- !u!114 &-1189051069371940318
-MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -24,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5d17a21594effb4e9591490b009e7aa, type: 3}
-  m_Name: BundledAssetGroupSchema
+  m_Name: Sprite_BundledAssetGroupSchema
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 11400000, guid: 4d0f35b30af096c4b9004b985de066b8, type: 2}
   m_InternalBundleIdMode: 1
   m_Compression: 1
   m_IncludeAddressInCatalog: 1
@@ -48,29 +34,12 @@ MonoBehaviour:
   m_RedirectLimit: -1
   m_RetryCount: 0
   m_BuildPath:
-    m_Id: 
+    m_Id: 49492f8e4c080324fb4b962509fcfe11
   m_LoadPath:
-    m_Id: 
+    m_Id: 36ca01e0727ec474e90b47471bb7bb9c
   m_BundleMode: 0
   m_AssetBundleProviderType:
     m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
   m_BundleNaming: 0
   m_AssetLoadMode: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a3c5d64ac83548c09dd1678b9f6f1cd, type: 3}
-  m_Name: Packed Assets
-  m_EditorClassIdentifier: 
-  m_SchemaObjects:
-  - {fileID: -1189051069371940318}
-  - {fileID: -6802431905643804052}
-  m_Description: Pack assets into asset bundles.
-  m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

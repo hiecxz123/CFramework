@@ -15,10 +15,10 @@ MonoBehaviour:
   m_GroupName: Audio
   m_Data:
     m_SerializedData: []
-  m_GUID: 4391c9174971b5243bc5d6b91460c1e1
+  m_GUID: e7880bfab41d19f459956bf9f9cecab1
   m_SerializeEntries:
   - m_GUID: 24b8d22551afbb246a842d030488bfc5
-    m_Address: Footstep
+    m_Address: Assets/CFramework/Scene/Addressables/Res/Audio/FootStep.wav
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -26,5 +26,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 0eedca87e0d3572489b1dc3bf4315292, type: 2}
-    - {fileID: 11400000, guid: 747f971082726b840af91f12f1716b6f, type: 2}
+    - {fileID: 11400000, guid: c49c2aec333c09a4195051a3333f4df8, type: 2}
+    - {fileID: 11400000, guid: 228938b40f68aa446992e9a5867feaf5, type: 2}

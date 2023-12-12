@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Atlas
   m_Data:
     m_SerializedData: []
-  m_GUID: 49a773a2eac6e64439275f4584be1027
+  m_GUID: b354ad3da6af85c44bdd78f0473df083
   m_SerializeEntries:
   - m_GUID: 5f979a1571ef8d5498be54a757433a1b
     m_Address: UIAtlas
@@ -26,5 +26,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: cf96cf4fa6e8afa4daf0cbc1d9eb37c4, type: 2}
-    - {fileID: 11400000, guid: 1a0c2554577b6304d887acc392f09c2c, type: 2}
+    - {fileID: 11400000, guid: 3c22edc1910fedc44a33054bb85c433c, type: 2}
+    - {fileID: 11400000, guid: 5043230b3180084448df2a438c4e2a77, type: 2}
