@@ -291,6 +291,7 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  objLists: []
 --- !u!4 &660211874
 Transform:
   m_ObjectHideFlags: 0

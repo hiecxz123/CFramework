@@ -126,20 +126,31 @@ public class AddressablesTest : MonoBehaviour
         //    Addressables.MergeMode.None,true);
 
         //AddressableMgr
-        AddressableMgr.GetInstance().LoadAssetsAsync<UnityEngine.Object>(
-            Addressables.MergeMode.Union,
-            (obj) =>
-            {
-                Debug.Log("1:" + obj.name);
-            },
-            "Cube", "Item", "default");
-        AddressableMgr.GetInstance().LoadAssetsAsync<UnityEngine.Object>(
-            Addressables.MergeMode.Union,
-            (obj) =>
-            {
-                Debug.Log("2:" + obj.name);
-            },
-            "Cube", "Item", "default");
+        //AddressableMgr.GetInstance().LoadAssetsAsync<UnityEngine.Object>(
+        //    Addressables.MergeMode.Union,
+        //    (obj) =>
+        //    {
+        //        Debug.Log("1:" + obj.name);
+        //        Instantiate(obj, Vector3.up * 2f, Quaternion.identity);
+
+        //    },
+        //    "Cube", "Item", "default");
+        //AddressableMgr.GetInstance().LoadAssetsAsync<UnityEngine.Object>(
+        //    Addressables.MergeMode.Union,
+        //    (obj) =>
+        //    {
+        //        Debug.Log("2:" + obj.name);
+        //        Instantiate(obj);
+        //    },
+        //    "Cube", "Item", "default");
+
+        //‘∂∂Àº”‘ÿ
+        AddressableMgr.GetInstance().LoadAssetAsync<GameObject>("Player1", (obj) =>
+        {
+            GameObject o = Instantiate(obj.Result);
+            o.transform.position = Vector3.right;
+            Debug.Log("4");
+        });
     }
 
     private void ComplateLoad(AsyncOperationHandle<GameObject> obj)
