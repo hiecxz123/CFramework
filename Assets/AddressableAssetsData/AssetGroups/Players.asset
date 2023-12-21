@@ -15,9 +15,20 @@ MonoBehaviour:
   m_GroupName: Players
   m_Data:
     m_SerializedData: []
-  m_GUID: d93451ce1ad1a0e4fa9acab9906a1ca7
+  m_GUID: ab2ab772a40663e4eb616c6b2f722305
   m_SerializeEntries:
-  - m_GUID: 8737f470f96489f48881744bb431cca2
+  - m_GUID: a49b5fbe831fe1e4192bbfe19353a8ff
+    m_Address: Capsule
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Player
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75e3d80369d48dd4995b6896046a3308
+    m_Address: Cube
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2a9e4e2254e9ea489863ed311515a6d
     m_Address: Player1
     m_ReadOnly: 0
     m_SerializedLabels: []
@@ -26,5 +37,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 778ad57133126214695d52183790923b, type: 2}
-    - {fileID: 11400000, guid: cff25c4718e3eef4f8997098cb56aeaa, type: 2}
+    - {fileID: 11400000, guid: 2f1eaf70ec35ddf49834e96af62e58fb, type: 2}
+    - {fileID: 11400000, guid: 7d640962fa4c0134da4b538c51b136dc, type: 2}

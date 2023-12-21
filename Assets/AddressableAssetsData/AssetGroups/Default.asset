@@ -16,12 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 1627f2bb0eada834f8091f6f82999347
-  m_SerializeEntries:
-  - m_GUID: 96c34a50971857b4f98dccab796b5b99
-    m_Address: Assets/CFramework/Scene/Addressables/Res/Scene/TestScene.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}
   m_SchemaSet:

@@ -4,11 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-
+//可寻址资源信息
+public class AddressablesInfo
+{
+    //记录 异步操作句柄
+    public AsyncOperationHandle handle;
+    //记录 引用计数
+    public uint count;
+    //第一次使用时，引用计数默认+1
+    public AddressablesInfo(AsyncOperationHandle handle)
+    {
+        this.handle = handle;
+        count += 1;
+    }
+}
 public class AddressableMgr : Singleton<AddressableMgr>
 {
     //使用AsyncOperationHandle的父类来记录
-    public Dictionary<string, IEnumerator> resDic = new Dictionary<string, IEnumerator>();
+    public Dictionary<string, AddressablesInfo> resDic = new Dictionary<string, AddressablesInfo>();
     //异步加载资源
     public void LoadAssetAsync<T>(string name, Action<AsyncOperationHandle<T>> callback)
     {
@@ -18,7 +31,9 @@ public class AddressableMgr : Singleton<AddressableMgr>
         //如果加载过资源
         if (resDic.ContainsKey(keyName))
         {
-            handle = (AsyncOperationHandle<T>)resDic[keyName];
+            handle = resDic[keyName].handle.Convert<T>();
+            //要使用资源了，引用计数+1
+            resDic[keyName].count += 1;
             //判断异步加载是否结束
             if (handle.IsDone)
             {
@@ -54,7 +69,8 @@ public class AddressableMgr : Singleton<AddressableMgr>
                 }
             }
         };
-        resDic.Add(keyName, handle);
+        AddressablesInfo info = new AddressablesInfo(handle);
+        resDic.Add(keyName, info);
     }
 
     //释放资源
@@ -63,9 +79,17 @@ public class AddressableMgr : Singleton<AddressableMgr>
         string keyName = name + "_" + typeof(T).Name;
         if (resDic.ContainsKey(keyName))
         {
-            AsyncOperationHandle<T> handle = (AsyncOperationHandle<T>)resDic[keyName];
-            Addressables.Release(handle);
-            resDic.Remove(keyName);
+            //释放时引用计数-1
+            resDic[keyName].count -= 1;
+            //如果引用计数为0，才真正的释放
+            if (resDic[keyName].count <= 0)
+            {
+                //取出对象，移除资源，并且从字典里面移除
+                AsyncOperationHandle<T> handle = resDic[keyName].handle.Convert<T>();
+                Addressables.Release(handle);
+                resDic.Remove(keyName);
+            }
+
         }
     }
 
@@ -83,7 +107,9 @@ public class AddressableMgr : Singleton<AddressableMgr>
         //是否已经加载了
         if (resDic.ContainsKey(keyName))
         {
-            handle = (AsyncOperationHandle<IList<T>>)resDic[keyName];
+            handle = resDic[keyName].handle.Convert<IList<T>>();
+            //使用资源，引用计数+1
+            resDic[keyName].count += 1;
             if (handle.IsDone)
             {
                 //如果已经创建了，则将Result传入callback作为参数
@@ -120,9 +146,10 @@ public class AddressableMgr : Singleton<AddressableMgr>
                 }
             }
         };
-        resDic.Add(keyName, handle);
+        AddressablesInfo info = new AddressablesInfo(handle);
+        resDic.Add(keyName, info);
     }
-    
+
     /// <summary>
     /// 不使用Action<T>回调，使用complate事件来执行
     /// </summary>
@@ -144,7 +171,8 @@ public class AddressableMgr : Singleton<AddressableMgr>
         //是否已经加载了
         if (resDic.ContainsKey(keyName))
         {
-            handle = (AsyncOperationHandle<IList<T>>)resDic[keyName];
+            resDic[keyName].count += 1;
+            handle = resDic[keyName].handle.Convert<IList<T>>();
             if (handle.IsDone)
             {
                 //如果已经创建了，则将Result传入handle作为参数
@@ -185,7 +213,8 @@ public class AddressableMgr : Singleton<AddressableMgr>
                 }
             }
         };
-        resDic.Add(keyName, handle);
+        AddressablesInfo info = new AddressablesInfo(handle);
+        resDic.Add(keyName, info);
     }
 
     public void Release<T>(params string[] keys)
@@ -197,14 +226,24 @@ public class AddressableMgr : Singleton<AddressableMgr>
             keyName += key + "_";
         }
         keyName += typeof(T).Name;
-
-        AsyncOperationHandle<IList<T>> handle = (AsyncOperationHandle<IList<T>>)resDic[keyName];
-        Addressables.Release(handle);
-        resDic.Remove(keyName);
+        if (resDic.ContainsKey(keyName))
+        {
+            resDic[keyName].count -= 1;
+            if (resDic[keyName].count == 0)
+            {
+                AsyncOperationHandle<IList<T>> handle = resDic[keyName].handle.Convert<IList<T>>();
+                Addressables.Release(handle);
+                resDic.Remove(keyName);
+            }
+        }
     }
 
     public void Clear()
     {
+        foreach (var item in resDic.Values)
+        {
+            Addressables.Release(item.handle);
+        }
         resDic.Clear();
         AssetBundle.UnloadAllAssetBundles(true);
         Resources.UnloadUnusedAssets();

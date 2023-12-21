@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 1627f2bb0eada834f8091f6f82999347
   m_currentHash:
     serializedVersion: 2
-    Hash: d80b0ce15088c9a24ddbc063d454ff22
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 1
   m_BundleLocalCatalog: 0
@@ -47,10 +47,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1205da984ebc3d24ab35d6ee7c388694, type: 2}
   - {fileID: 11400000, guid: f3dc3b7118a084f4681e9c2ac0d0fc00, type: 2}
   - {fileID: 11400000, guid: fd80a11b6301083468b0673064d1c5df, type: 2}
-  - {fileID: 11400000, guid: 69ccb1ded27bf4843981eef91aa205fc, type: 2}
   - {fileID: 11400000, guid: 4d0f35b30af096c4b9004b985de066b8, type: 2}
   - {fileID: 11400000, guid: 2614628b48f9abe4b9c83694372b0502, type: 2}
-  - {fileID: 11400000, guid: b3aa8d86cf06a7d4f82f00154ec1ec37, type: 2}
+  - {fileID: 11400000, guid: 1e68b39b8ea70364582b3845c70b1210, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -85,7 +84,7 @@ MonoBehaviour:
       - m_Id: 93112575fec34b341bd66f02833c4e9c
         m_Value: ServerData/[BuildTarget]
       - m_Id: e56315e7a6f76a548afbf8e659054af1
-        m_Value: http://192.168.0.114:4040/[BuildTarget]
+        m_Value: http://43.139.209.245:4040/[BuildTarget]
     m_ProfileEntryNames:
     - m_Id: b91f077899b2ce348922962afeee137c
       m_Name: BuildTarget
@@ -106,6 +105,7 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - Player
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 9b05ea6cc03e2344f81c7d143ea02991, type: 2}
@@ -119,7 +119,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff481aedc209965478a8328051bf99dd, type: 2}
   - {fileID: 11400000, guid: c65dbc38fff2c56489004876efcaf39c, type: 2}
   - {fileID: 11400000, guid: 9f71f222e15894d4fa4f417c50500c6e, type: 2}
-  m_ActiveProfileId: 2f1e2793b44de2d40b897d9b48bb8264
+  m_ActiveProfileId: 0cf6d620f877a9d4993434a17d484339
   m_HostingServicesManager:
     m_HostingServiceInfos:
     - classRef: UnityEditor.AddressableAssets.HostingServices.HttpHostingService,
