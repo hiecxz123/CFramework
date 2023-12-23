@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:TextField picking-mode="Ignore" label="资源文件夹名称" value="AddressablesResources" name="ResForderTxtField" style="align-items: flex-start; justify-content: space-between; align-self: stretch;" />
+    <ui:Button text="创建Addressables资源文件夹及子目录" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreateForderBtn" />
+    <ui:Button text="根据资源目录名称对资源进行Addressables标记并分组" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GroupingBtn" style="height: 52px;" />
+</ui:UXML>
