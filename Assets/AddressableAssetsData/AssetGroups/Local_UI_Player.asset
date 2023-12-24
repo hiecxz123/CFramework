@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Local_UI_Player
   m_Data:
     m_SerializedData: []
-  m_GUID: 1d250667ba7323e479983e6201e122cd
+  m_GUID: d232a892308895b4ab57c6db857f1db6
   m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

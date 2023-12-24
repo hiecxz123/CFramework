@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Local_Prefab
   m_Data:
     m_SerializedData: []
-  m_GUID: 27ee7213cda1b3545bbdeb122e746ce2
+  m_GUID: 2e13f48aae7786047941ed06ffa64fed
   m_SerializeEntries:
   - m_GUID: d7c10cf6c4c35dd4e9b4d72742e24d0e
     m_Address: Capsule

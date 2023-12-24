@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Local_Scene
   m_Data:
     m_SerializedData: []
-  m_GUID: 55765003aab66ef4f8b9e4b638b611a1
+  m_GUID: 10425b94deac0524094fa8e33e5b99c4
   m_SerializeEntries:
   - m_GUID: c9338078c2c32ad46a8f9b9a0cc7c032
     m_Address: TestScene

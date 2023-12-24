@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Local_Data
   m_Data:
     m_SerializedData: []
-  m_GUID: de23b70aeed47844e9917e346a0c6904
+  m_GUID: dd9faf5961f8d49498678ef04c957c3b
   m_SerializeEntries:
   - m_GUID: ea39f326ec0a60d4e8955fd744077c58
     m_Address: ItemData

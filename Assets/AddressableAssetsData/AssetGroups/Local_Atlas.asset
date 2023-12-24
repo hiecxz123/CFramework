@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Local_Atlas
   m_Data:
     m_SerializedData: []
-  m_GUID: 89d84575e17787e4090ca56d6b768e80
+  m_GUID: 6284780c115f89b4a8ea55fa2bccf568
   m_SerializeEntries:
   - m_GUID: dfd1ca905ec99bd4daa4e07837bc04f9
     m_Address: UIAtlas

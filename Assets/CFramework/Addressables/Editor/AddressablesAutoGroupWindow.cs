@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
+using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -17,11 +18,6 @@ public class AddressablesAutoGroupWindow : EditorWindow
 
     string aaResForderRemotePath = "";
     string aaResForderLocalPath = "";
-
-    string localBuildPath = "";
-    string localLoadPath = "";
-    string remoteBuildPath = "";
-    string remoteLoadPath = "";
 
     [MenuItem("Addressables/AddressablesAutoGroupWindow")]
     public static void ShowExample()
@@ -40,6 +36,11 @@ public class AddressablesAutoGroupWindow : EditorWindow
         VisualElement labelFromUXML = m_VisualTreeAsset.Instantiate();
         root.Add(labelFromUXML);
 
+        if (setting == null)
+        {
+            setting = AssetDatabase.LoadAssetAtPath<AddressableAssetSettings>("Assets/AddressableAssetsData/AddressableAssetSettings.asset");
+        }
+
         //初始化资源路径
         aaResForderRemotePath =
             Path.Combine(
@@ -52,15 +53,20 @@ public class AddressablesAutoGroupWindow : EditorWindow
                 rootVisualElement.Q<TextField>("ResForderTxtField").text,
                 "Local");
 
+
+        root.Q<Button>("InitBtn").clicked += InitAddressables;
+        root.Q<Button>("CreateForderBtn").clicked += OnCreateForderBtnClick;
+        root.Q<Button>("GroupingBtn").clicked += OnGroupingBtnClick;
+
         if (setting == null)
         {
-            setting = AssetDatabase.LoadAssetAtPath<AddressableAssetSettings>("Assets/AddressableAssetsData/AddressableAssetSettings.asset");
+            Debug.LogError("Settings为空！");
+            return;
         }
         //获取所有的Profiles名称
         List<string> profileNames = setting.profileSettings.GetAllProfileNames();
 
-
-        DropdownField dropdownField = root.Q<DropdownField>("ProfileDropdown");
+        DropdownField dropdownField = rootVisualElement.Q<DropdownField>("ProfileDropdown");
         foreach (var item in profileNames)
         {
             dropdownField.choices.Add(item);
@@ -70,9 +76,48 @@ public class AddressablesAutoGroupWindow : EditorWindow
         //设置默认的Profile名称
         defaultProfileName = dropdownField.choices[0];
         dropdownField.RegisterValueChangedCallback(OnProfileDropdownValueChanged);
+    }
 
-        root.Q<Button>("CreateForderBtn").clicked += OnCreateForderBtnClick;
-        root.Q<Button>("GroupingBtn").clicked += OnGroupingBtnClick;
+    private void InitAddressables()
+    {
+        if (setting == null)
+        {
+            setting = AssetDatabase.LoadAssetAtPath<AddressableAssetSettings>("Assets/AddressableAssetsData/AddressableAssetSettings.asset");
+            if (setting == null)
+            {
+                AddressableAssetSettingsDefaultObject.Settings
+                    = AddressableAssetSettings.Create(
+                        AddressableAssetSettingsDefaultObject.kDefaultConfigFolder,
+                        AddressableAssetSettingsDefaultObject.kDefaultConfigAssetName, true, true
+                        );
+                setting = AddressableAssetSettingsDefaultObject.Settings;
+            }
+        }
+        else
+        {
+            Debug.Log("Addressables已经初始化");
+            return;
+        }
+        setting.BuildRemoteCatalog = true;
+
+        if (setting == null)
+        {
+            Debug.LogError("Settings为空！");
+            return;
+        }
+        //获取所有的Profiles名称
+        List<string> profileNames = setting.profileSettings.GetAllProfileNames();
+
+        DropdownField dropdownField = rootVisualElement.Q<DropdownField>("ProfileDropdown");
+        foreach (var item in profileNames)
+        {
+            dropdownField.choices.Add(item);
+        }
+        //设置默认选择索引
+        dropdownField.index = 0;
+        //设置默认的Profile名称
+        defaultProfileName = dropdownField.choices[0];
+        dropdownField.RegisterValueChangedCallback(OnProfileDropdownValueChanged);
     }
 
     private void OnProfileDropdownValueChanged(ChangeEvent<string> evt)

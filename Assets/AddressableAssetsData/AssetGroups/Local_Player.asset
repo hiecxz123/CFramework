@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Local_Player
   m_Data:
     m_SerializedData: []
-  m_GUID: 097301dd6000c0548b69ac2d887333b7
+  m_GUID: 9d6f7a002e3123b428c94a1b416d4822
   m_SerializeEntries:
   - m_GUID: 769be557931df2940b7e114469433bef
     m_Address: Cube

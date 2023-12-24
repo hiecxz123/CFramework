@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Remote_UI_Main
   m_Data:
     m_SerializedData: []
-  m_GUID: f232f5be1df398e4fbfbf510697a5152
+  m_GUID: 9e4cd4f673d1b434492247b9e4026e8d
   m_SerializeEntries:
   - m_GUID: 6847c18eb045afd4992575f4d6a28ca9
     m_Address: Main

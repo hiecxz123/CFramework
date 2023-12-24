@@ -1,4 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Button text="初始化" parse-escape-sequences="true" display-tooltip-when-elided="true" name="InitBtn" />
     <ui:TextField picking-mode="Ignore" label="资源文件夹名称" value="AddressablesResources" name="ResForderTxtField" style="align-items: flex-start; justify-content: space-between; align-self: stretch;" />
     <ui:Button text="创建Addressables资源文件夹及子目录" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreateForderBtn" />
     <ui:DropdownField label="Addressables Prifile" index="-1" name="ProfileDropdown" />
