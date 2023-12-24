@@ -13,9 +13,15 @@ public class AddressablesAutoGroupWindow : EditorWindow
     private VisualTreeAsset m_VisualTreeAsset = default;
     [SerializeField]
     private AddressableAssetSettings setting;
+    private string defaultProfileName = "";
 
     string aaResForderRemotePath = "";
     string aaResForderLocalPath = "";
+
+    string localBuildPath = "";
+    string localLoadPath = "";
+    string remoteBuildPath = "";
+    string remoteLoadPath = "";
 
     [MenuItem("Addressables/AddressablesAutoGroupWindow")]
     public static void ShowExample()
@@ -45,23 +51,45 @@ public class AddressablesAutoGroupWindow : EditorWindow
                 Application.dataPath,
                 rootVisualElement.Q<TextField>("ResForderTxtField").text,
                 "Local");
+
         if (setting == null)
         {
             setting = AssetDatabase.LoadAssetAtPath<AddressableAssetSettings>("Assets/AddressableAssetsData/AddressableAssetSettings.asset");
         }
+        //获取所有的Profiles名称
+        List<string> profileNames = setting.profileSettings.GetAllProfileNames();
+
+
+        DropdownField dropdownField = root.Q<DropdownField>("ProfileDropdown");
+        foreach (var item in profileNames)
+        {
+            dropdownField.choices.Add(item);
+        }
+        //设置默认选择索引
+        dropdownField.index = 0;
+        //设置默认的Profile名称
+        defaultProfileName = dropdownField.choices[0];
+        dropdownField.RegisterValueChangedCallback(OnProfileDropdownValueChanged);
 
         root.Q<Button>("CreateForderBtn").clicked += OnCreateForderBtnClick;
         root.Q<Button>("GroupingBtn").clicked += OnGroupingBtnClick;
     }
 
+    private void OnProfileDropdownValueChanged(ChangeEvent<string> evt)
+    {
+        defaultProfileName = evt.newValue;
+    }
+
+
     private void OnGroupingBtnClick()
     {
         if (Directory.Exists(aaResForderRemotePath))
         {
-            string[] files = Directory.GetFiles(aaResForderRemotePath, "*", SearchOption.AllDirectories);
-            for (int i = 0; i < files.Length; i++)
+            string groupName = "Remote";
+            DirectoryInfo[] forderInfo = new DirectoryInfo(aaResForderRemotePath).GetDirectories();
+            for (int i = 0; i < forderInfo.Length; i++)
             {
-                Debug.Log(files[i]);
+                MarkRes(forderInfo[i], groupName);
             }
         }
         else
@@ -70,14 +98,10 @@ public class AddressablesAutoGroupWindow : EditorWindow
         }
         if (Directory.Exists(aaResForderLocalPath))
         {
-
-            //string[] files = Directory.GetFiles(aaResForderLocalPath, "*", SearchOption.AllDirectories);
-
             string groupName = "Local";
             DirectoryInfo[] forderInfo = new DirectoryInfo(aaResForderLocalPath).GetDirectories();
             for (int i = 0; i < forderInfo.Length; i++)
             {
-                //Debug.Log(forderInfo[i].FullName);
                 MarkRes(forderInfo[i], groupName);
             }
         }
@@ -92,7 +116,7 @@ public class AddressablesAutoGroupWindow : EditorWindow
         string subGroupName = groupName + "_" + info.Name;
         //查询当前路径下的所有目录
         DirectoryInfo[] subForders = new DirectoryInfo(info.FullName).GetDirectories();
-        Debug.Log(subGroupName);
+
         var group = setting.FindGroup(subGroupName);
         if (group == null)
         {
@@ -104,7 +128,17 @@ public class AddressablesAutoGroupWindow : EditorWindow
                     setting.DefaultGroup.Schemas[1]
                 }
                 );
+            //group.Settings.activeProfileId = setting.activeProfileId;
+
+            if (groupName.Contains("Remote"))
+            {
+
+            }
+
         }
+        //Debug.Log(group.Settings..SetVariableByName(setting.g));
+        group.Settings.RemoteCatalogBuildPath.GetValue(group.Settings);
+
         //查找当前目录下的所有资源
         FileInfo[] files = info.GetFiles();
         for (int i = 0; i < files.Length; i++)
