@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Local_Audio
+  m_EditorClassIdentifier: 
+  m_GroupName: Local_Audio
+  m_Data:
+    m_SerializedData: []
+  m_GUID: aa61ce95514f22a4a9c8703f73150ddf
+  m_SerializeEntries:
+  - m_GUID: 21e26df9130d4f2469c32ef2eda5548c
+    m_Address: FootStep
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 990673fb91baa724c9126b6cd712d0c6, type: 2}
+    - {fileID: 11400000, guid: 77e9cb4ac2e3bea44b8b6be4a48696be, type: 2}

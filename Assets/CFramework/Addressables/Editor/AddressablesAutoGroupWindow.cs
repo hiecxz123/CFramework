@@ -108,10 +108,41 @@ public class AddressablesAutoGroupWindow : EditorWindow
         else
         {
             Debug.LogError("Local Forder Not Exist!");
+            return;
+        }
+        MarkStatus();
+    }
+    //根据资源分类Remote和Local
+    private void MarkStatus()
+    {
+        for (int i = 0; i < setting.groups.Count; i++)
+        {
+            var group = setting.groups[i];
+            foreach (var schema in group.Schemas)
+            {
+                if (schema is UnityEditor.AddressableAssets.Settings.GroupSchemas.BundledAssetGroupSchema)
+                {
+                    string buildPath = AddressableAssetSettings.kBuildPath;
+                    string loadPath = AddressableAssetSettings.kLoadPath;
+                    if (group.name.Contains("Local"))
+                    {
+                        buildPath = AddressableAssetSettings.kLocalBuildPath;
+                        loadPath = AddressableAssetSettings.kLocalLoadPath;
+                    }
+                    else if (group.name.Contains("Remote"))
+                    {
+                        buildPath = AddressableAssetSettings.kRemoteBuildPath;
+                        loadPath = AddressableAssetSettings.kRemoteLoadPath;
+                    }
+                    var bundleAssetGroupSchema = (schema as UnityEditor.AddressableAssets.Settings.GroupSchemas.BundledAssetGroupSchema);
+                    bundleAssetGroupSchema.BuildPath.SetVariableByName(group.Settings, buildPath);
+                    bundleAssetGroupSchema.LoadPath.SetVariableByName(group.Settings, loadPath);
+                }
+            }
         }
     }
 
-    public void MarkRes(DirectoryInfo info, string groupName)
+    private void MarkRes(DirectoryInfo info, string groupName)
     {
         string subGroupName = groupName + "_" + info.Name;
         //查询当前路径下的所有目录
@@ -128,17 +159,7 @@ public class AddressablesAutoGroupWindow : EditorWindow
                     setting.DefaultGroup.Schemas[1]
                 }
                 );
-            //group.Settings.activeProfileId = setting.activeProfileId;
-
-            if (groupName.Contains("Remote"))
-            {
-
-            }
-
         }
-        //Debug.Log(group.Settings..SetVariableByName(setting.g));
-        group.Settings.RemoteCatalogBuildPath.GetValue(group.Settings);
-
         //查找当前目录下的所有资源
         FileInfo[] files = info.GetFiles();
         for (int i = 0; i < files.Length; i++)
@@ -149,7 +170,7 @@ public class AddressablesAutoGroupWindow : EditorWindow
                 string assetPath = "Assets" +
                     files[i].FullName.Replace(Application.dataPath.Replace("/", "\\"), "");
                 assetPath.Replace("\\", "/");
-                Debug.Log(assetPath);
+                //Debug.Log(assetPath);
                 string guid = AssetDatabase.AssetPathToGUID(assetPath);
                 var entry = setting.CreateOrMoveEntry(guid, group);
                 if (entry.address != address)
@@ -164,7 +185,9 @@ public class AddressablesAutoGroupWindow : EditorWindow
         }
     }
 
-    public void OnCreateForderBtnClick()
+
+
+    private void OnCreateForderBtnClick()
     {
         if (!Directory.Exists(aaResForderRemotePath))
         {

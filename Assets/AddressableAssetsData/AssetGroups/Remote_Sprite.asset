@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Remote_Sprite
+  m_EditorClassIdentifier: 
+  m_GroupName: Remote_Sprite
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 038d41460509a6b49813acda52d223a5
+  m_SerializeEntries:
+  - m_GUID: fc26ff41d1439594981fd90644913960
+    m_Address: Circle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e555a1186ae10740979c39a732aa867
+    m_Address: defaultTex
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e99dd4aa018a9a469990734dc8d02f3
+    m_Address: DPad
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75c820194df2b664b893a77f3b7dca73
+    m_Address: GridBox_Default
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0dbf7bfd85fd544699ab1b24fd698e4
+    m_Address: "\u6447\u6746\u6309\u952E\u56FE\u68071"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c81570a7217caf438554d4c61ee29f0
+    m_Address: "\u6447\u6746\u6309\u952E\u56FE\u68072"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8bf099563cadadc45a59f5f539a87a13, type: 2}
+    - {fileID: 11400000, guid: 9ace40e1df5616746b1ea9006d155396, type: 2}
