@@ -15,12 +15,14 @@ MonoBehaviour:
   m_GroupName: Local_Scene
   m_Data:
     m_SerializedData: []
-  m_GUID: 10425b94deac0524094fa8e33e5b99c4
+  m_GUID: 1121eb20662b34e4d9c446e9b3fa71c0
   m_SerializeEntries:
   - m_GUID: c9338078c2c32ad46a8f9b9a0cc7c032
     m_Address: TestScene
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Scene
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

@@ -15,12 +15,14 @@ MonoBehaviour:
   m_GroupName: Remote_Scene
   m_Data:
     m_SerializedData: []
-  m_GUID: 381c58b08fd3b6646b4c378de84536e8
+  m_GUID: d53c273ddbc73274e8ce7626274431b6
   m_SerializeEntries:
   - m_GUID: f700526319432034488f7604a207851c
     m_Address: TestScene
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - Scene
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

@@ -15,12 +15,14 @@ MonoBehaviour:
   m_GroupName: Remote_Audio
   m_Data:
     m_SerializedData: []
-  m_GUID: cc528b405c2233c4d80742d6ec7ebcfb
+  m_GUID: 791cac664c8d32443a5e2d702a8087eb
   m_SerializeEntries:
   - m_GUID: 2c38ff50549aa6542b3f74fe1a781ecf
     m_Address: FootStep
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - Audio
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

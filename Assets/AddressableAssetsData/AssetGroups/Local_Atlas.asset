@@ -15,12 +15,14 @@ MonoBehaviour:
   m_GroupName: Local_Atlas
   m_Data:
     m_SerializedData: []
-  m_GUID: 6284780c115f89b4a8ea55fa2bccf568
+  m_GUID: 53a89e765d23021498f0e7569fa4f144
   m_SerializeEntries:
   - m_GUID: dfd1ca905ec99bd4daa4e07837bc04f9
     m_Address: UIAtlas
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Atlas
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

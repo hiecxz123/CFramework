@@ -15,12 +15,15 @@ MonoBehaviour:
   m_GroupName: Local_UI_Main
   m_Data:
     m_SerializedData: []
-  m_GUID: 820fc132b8b2c81408e2668c1d70edcd
+  m_GUID: 23d494b71c0a50d428bcfd5f8d70b399
   m_SerializeEntries:
   - m_GUID: 68b7cd3c46adf92488cf0fcdd6390145
     m_Address: Main
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - UI
+    - Main
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

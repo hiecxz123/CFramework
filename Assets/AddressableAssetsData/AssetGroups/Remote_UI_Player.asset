@@ -15,12 +15,15 @@ MonoBehaviour:
   m_GroupName: Remote_UI_Player
   m_Data:
     m_SerializedData: []
-  m_GUID: c12bf5481b37ca5419ff41e8bf6a4b16
+  m_GUID: 6b61288c5827be84f92c6c26e143b554
   m_SerializeEntries:
   - m_GUID: 74309d768bd0e9541996466fc4991985
     m_Address: Player
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - UI
+    - Player
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

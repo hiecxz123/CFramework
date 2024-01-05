@@ -255,7 +255,18 @@ public class AddressablesTest : MonoBehaviour
         #endregion
 
         #region 预加载
+        //StartCoroutine(PreLoadAssets());
+        #endregion
 
+        #region Addressable分组工具多条件加载
+        //AddressableMgr.GetInstance().LoadAssetsAsync<GameObject>(
+        //    Addressables.MergeMode.Intersection,
+        //    (obj) => {
+        //        Instantiate(obj);
+        //    },
+        //    ADDRESSABLES_RESOURCES.Local_Player_Player1
+        //    );
+            
         #endregion
 
     }

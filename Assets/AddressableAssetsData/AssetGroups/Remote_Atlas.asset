@@ -15,12 +15,14 @@ MonoBehaviour:
   m_GroupName: Remote_Atlas
   m_Data:
     m_SerializedData: []
-  m_GUID: b33a6dfba47e1c84ea90f8600067bbfd
+  m_GUID: 85a12260fc3b3f548883e6a71921ee5d
   m_SerializeEntries:
   - m_GUID: 7f5124290f61bf74f908f845376c3ad7
     m_Address: UIAtlas
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - Atlas
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

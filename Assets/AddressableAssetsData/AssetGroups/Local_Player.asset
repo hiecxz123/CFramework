@@ -15,22 +15,28 @@ MonoBehaviour:
   m_GroupName: Local_Player
   m_Data:
     m_SerializedData: []
-  m_GUID: 9d6f7a002e3123b428c94a1b416d4822
+  m_GUID: 31242f1e70297754a9e8a0863397c8cc
   m_SerializeEntries:
   - m_GUID: 769be557931df2940b7e114469433bef
     m_Address: Cube
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Player
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: be0cca2243f382e43ad03f1d6d9c2e08
     m_Address: Cylinder
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Player
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d5b9f7d63848998428052bd4e2d471bc
     m_Address: Player1
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Player
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

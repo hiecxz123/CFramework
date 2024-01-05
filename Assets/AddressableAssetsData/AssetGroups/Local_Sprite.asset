@@ -15,37 +15,49 @@ MonoBehaviour:
   m_GroupName: Local_Sprite
   m_Data:
     m_SerializedData: []
-  m_GUID: d82fa9d6a783979449a4dd7ead3d0b7c
+  m_GUID: e1097c66874a301489a74b8e7237008e
   m_SerializeEntries:
   - m_GUID: 008980a1f06ba3147ad054dd3ea628da
     m_Address: Circle
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8a5ea30c8b47ab742a3be28346c4d656
     m_Address: defaultTex
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 530977c214b052346a73555c590c3ceb
     m_Address: DPad
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6185a15966e3810439dbe898a12b8e94
     m_Address: GridBox_Default
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 23b53f25f9577d64f83abe087b9e7168
     m_Address: "\u6447\u6746\u6309\u952E\u56FE\u68071"
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 51ce01c9f66592e4297fd500350e7474
     m_Address: "\u6447\u6746\u6309\u952E\u56FE\u68072"
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

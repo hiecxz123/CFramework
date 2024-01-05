@@ -15,12 +15,14 @@ MonoBehaviour:
   m_GroupName: Local_Audio
   m_Data:
     m_SerializedData: []
-  m_GUID: 7f0d936c8ed294e47a3b5c98f70fb204
+  m_GUID: 72273df9ec7d56448b69d294aa8f2954
   m_SerializeEntries:
   - m_GUID: 21e26df9130d4f2469c32ef2eda5548c
     m_Address: FootStep
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Audio
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

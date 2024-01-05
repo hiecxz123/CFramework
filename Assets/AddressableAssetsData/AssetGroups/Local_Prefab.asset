@@ -15,32 +15,42 @@ MonoBehaviour:
   m_GroupName: Local_Prefab
   m_Data:
     m_SerializedData: []
-  m_GUID: 2e13f48aae7786047941ed06ffa64fed
+  m_GUID: a596ffffc2b010940bf9bd89f2070150
   m_SerializeEntries:
   - m_GUID: d7c10cf6c4c35dd4e9b4d72742e24d0e
     m_Address: Capsule
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Prefab
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cbb72ab87e99cf747be984804dee6035
     m_Address: Cube
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Prefab
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6f08664f87a04e344b3707e5dd4741c8
     m_Address: Cube2
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Prefab
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b16e6cbe78e1dc64383c924673fb02f5
     m_Address: Cube3
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Prefab
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fbd38eff2bafd8a40b69a95eab94e44e
     m_Address: Sphere
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Prefab
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

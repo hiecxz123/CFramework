@@ -15,17 +15,21 @@ MonoBehaviour:
   m_GroupName: Local_Material
   m_Data:
     m_SerializedData: []
-  m_GUID: 364f84727802ebd4b8b98ad0e17eb914
+  m_GUID: 0130fc62d781d0e4da412e0926a8837e
   m_SerializeEntries:
   - m_GUID: bbf36e66fbd7fb34bac55ab6bc497258
     m_Address: Green
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Material
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6b27a1a63330e394990c48191612a733
     m_Address: Red
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Local
+    - Material
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

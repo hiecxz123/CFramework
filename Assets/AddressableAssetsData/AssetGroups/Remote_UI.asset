@@ -15,12 +15,14 @@ MonoBehaviour:
   m_GroupName: Remote_UI
   m_Data:
     m_SerializedData: []
-  m_GUID: a97e0083e4b2e4841ab50864f8fa2ba5
+  m_GUID: c5e06e324302fba44ae5d56a2c1f2b56
   m_SerializeEntries:
   - m_GUID: 2d561551fb8ac58428c854f2acb12756
     m_Address: Panel
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - UI
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

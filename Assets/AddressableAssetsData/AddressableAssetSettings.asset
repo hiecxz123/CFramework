@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: d1440ab7485f7fa4d9a40980f11796e5
   m_currentHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: a6958b94251eeb51c507dddb0df07fdf
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 1
   m_BundleLocalCatalog: 0
@@ -108,7 +108,18 @@ MonoBehaviour:
     m_ProfileVersion: 1
   m_LabelTable:
     m_LabelNames:
-    - default
+    - Atlas
+    - Audio
+    - Data
+    - Material
+    - Player
+    - Prefab
+    - Scene
+    - Sprite
+    - UI
+    - Main
+    - Local
+    - Remote
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 9b05ea6cc03e2344f81c7d143ea02991, type: 2}

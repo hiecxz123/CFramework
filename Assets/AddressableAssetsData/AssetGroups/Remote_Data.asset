@@ -15,12 +15,14 @@ MonoBehaviour:
   m_GroupName: Remote_Data
   m_Data:
     m_SerializedData: []
-  m_GUID: 8feb3e8777e7fe940983ebb757b9be42
+  m_GUID: e1a5f90ce9eb2ee4e9a7caaa303b61cc
   m_SerializeEntries:
   - m_GUID: 0de56c9d244691040adef3746f0be6f3
     m_Address: ItemData
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - Data
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

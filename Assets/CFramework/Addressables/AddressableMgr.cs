@@ -92,7 +92,11 @@ public class AddressableMgr : Singleton<AddressableMgr>
 
         }
     }
-
+    public void LoadAssetsAsync<T>(Addressables.MergeMode mode, Action<T> callback, ADDRESSABLES_RESOURCES enumKey)
+    {
+        string[] keys = enumKey.ToString().Split("_");
+        LoadAssetsAsync<T>(mode,callback,keys);
+    }
     public void LoadAssetsAsync<T>(Addressables.MergeMode mode, Action<T> callback, params string[] keys)
     {
         //callback为参数是T类型的对象，而不是AsyncOperationHandle

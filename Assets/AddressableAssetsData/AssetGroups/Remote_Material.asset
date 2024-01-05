@@ -15,17 +15,21 @@ MonoBehaviour:
   m_GroupName: Remote_Material
   m_Data:
     m_SerializedData: []
-  m_GUID: 1d05e8de189cf3d4b82aa2b5f8a30e2a
+  m_GUID: 0b02aeb0629881b4c889771b26a152dc
   m_SerializeEntries:
   - m_GUID: 983602674f498784e9450494eed79ba3
     m_Address: Green
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - Material
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 34278133d69bea9458732616e8892d84
     m_Address: Red
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - Material
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}

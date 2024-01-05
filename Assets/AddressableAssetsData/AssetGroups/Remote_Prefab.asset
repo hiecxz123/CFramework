@@ -15,32 +15,42 @@ MonoBehaviour:
   m_GroupName: Remote_Prefab
   m_Data:
     m_SerializedData: []
-  m_GUID: c9f43c5e3cf012c42a4c8b63ad6db499
+  m_GUID: e959a66eefdd99b47b95e5ef07851b9a
   m_SerializeEntries:
   - m_GUID: fc1817967b9cd834eb2502f26cc8e55f
     m_Address: Capsule
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - Prefab
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 77a6e88d9ac483b4fb8d53eab3144717
     m_Address: Cube
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - Prefab
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b48202ef7dc2e404e803f4138ed303e3
     m_Address: Cube2
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - Prefab
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3bcf3a9da0877c74bb0e275354d9a513
     m_Address: Cube3
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - Prefab
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2722054fbf299f545ac7671ebf8e9f13
     m_Address: Sphere
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Remote
+    - Prefab
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 88f551601d1d5a543a72e7967323cba0, type: 2}
