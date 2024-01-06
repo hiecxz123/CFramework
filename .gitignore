@@ -73,3 +73,8 @@ crashlytics-build.properties
 /Assets/AddressableAssetsData
 /Assets/AddressablesResources
 /ServerData
+/Assets/AddressableAssetsData.meta
+/Assets/AddressablesResources.meta
+/Assets/CFramework.meta
+/Assets/Project.meta
+/Assets/StreamingAssets.meta
