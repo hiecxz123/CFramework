@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/CFramework/HotUpdate/Huatuo/Editor/HuatuoAutoToolsEditor.uss?fileID=7433441132597879392&amp;guid=d4f116e20b4cb3f4d92c8f7a2b2c7a22&amp;type=3#HuatuoAutoToolsEditor" />
+    <ui:Button text="创建用于放置Huatuo热更新脚本的目录" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreateDirectoryBtn" style="width: auto; height: 50px; font-size: 20px;" />
+    <ui:VisualElement style="flex-grow: 1; justify-content: flex-start; align-items: flex-start; align-self: stretch; flex-direction: column; flex-wrap: nowrap;">
+        <ui:Toggle label="是否将Dll放入Addressables资源目录下" value="true" name="PutInAddressablesDirectoryTog" style="align-items: stretch; height: 50px; -unity-text-align: middle-left; font-size: 18px;" />
+        <ui:Toggle label="是否将框架脚本导入热更新目录" name="MoveFrameToHotUpdateTog" style="font-size: 18px;" />
+        <ui:Button text="生成Dll" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GenerateDllBtn" style="height: auto; white-space: nowrap; -unity-text-align: middle-center; width: auto; align-items: flex-start; max-width: none; align-self: stretch; font-size: 20px;" />
+    </ui:VisualElement>
+</ui:UXML>

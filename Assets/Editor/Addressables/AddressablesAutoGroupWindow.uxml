@@ -4,8 +4,8 @@
     <ui:Button text="创建Addressables资源文件夹及子目录" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreateForderBtn" />
     <ui:Button text="根据资源目录名称对资源进行Addressables标记并分组" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GroupingBtn" style="height: 52px;" />
     <ui:Button text="生成资源枚举类" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GenerateEnumClassBtn" />
-    <ui:VisualElement style="flex-grow: 1; align-items: flex-start; justify-content: flex-start; align-self: center; flex-direction: row; width: 373px; height: 42px;">
-        <ui:Toggle label="分组同时生成枚举类" name="GenerateEnumToggle" value="true" style="width: 140px; height: 16px; transform-origin: left; align-items: stretch; justify-content: space-around;" />
-        <ui:DropdownField label="Addressables Prifile" index="-1" name="ProfileDropdown" style="width: 221px;" />
+    <ui:VisualElement style="flex-grow: 1; align-items: flex-start; justify-content: flex-start; align-self: auto; flex-direction: row; width: 496px; height: 189px; flex-wrap: nowrap;">
+        <ui:Toggle label="分组同时生成枚举类" name="GenerateEnumToggle" value="true" style="width: 221px; height: 33px; transform-origin: center; align-items: center; justify-content: flex-start; align-self: flex-start;" />
+        <ui:DropdownField label="Addressables Prifile" index="-1" name="ProfileDropdown" style="width: 262px; align-items: center; justify-content: center; align-self: flex-start;" />
     </ui:VisualElement>
 </ui:UXML>
