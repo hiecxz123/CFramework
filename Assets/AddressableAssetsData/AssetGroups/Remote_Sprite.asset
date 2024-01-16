@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Remote_Sprite
   m_Data:
     m_SerializedData: []
-  m_GUID: b00d5795a4a2a1340aae42004dbe810d
+  m_GUID: 393b89c178d867f419adba5edd4b0b14
   m_SerializeEntries:
   - m_GUID: fc26ff41d1439594981fd90644913960
     m_Address: Circle

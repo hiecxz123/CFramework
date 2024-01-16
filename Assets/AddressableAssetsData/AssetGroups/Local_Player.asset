@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Local_Player
   m_Data:
     m_SerializedData: []
-  m_GUID: 31242f1e70297754a9e8a0863397c8cc
+  m_GUID: 0ed1441d10607554c9898d98053c1d76
   m_SerializeEntries:
   - m_GUID: 769be557931df2940b7e114469433bef
     m_Address: Cube
@@ -33,6 +33,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d5b9f7d63848998428052bd4e2d471bc
     m_Address: Player1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Local
+    - Player
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 200e34d4aff8665458b2059bc18d80ec
+    m_Address: TestPlayer
     m_ReadOnly: 0
     m_SerializedLabels:
     - Local

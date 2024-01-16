@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Local_UI
   m_Data:
     m_SerializedData: []
-  m_GUID: 2db9fc04245e0a748b96b3f1b8a85292
+  m_GUID: dbc708c754e828341aca816673ce8aa6
   m_SerializeEntries:
   - m_GUID: 938b91fffaf66de459373edd24ba8622
     m_Address: Panel

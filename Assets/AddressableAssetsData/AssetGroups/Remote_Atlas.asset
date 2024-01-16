@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Remote_Atlas
   m_Data:
     m_SerializedData: []
-  m_GUID: 85a12260fc3b3f548883e6a71921ee5d
+  m_GUID: 535956c86c5b9e1439747e2f8ae70920
   m_SerializeEntries:
   - m_GUID: 7f5124290f61bf74f908f845376c3ad7
     m_Address: UIAtlas

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Remote_Player
   m_Data:
     m_SerializedData: []
-  m_GUID: 62617435eeeecbe42a6a869e2bc7fd17
+  m_GUID: d666a925fc612ba40977b56d544c145b
   m_SerializeEntries:
   - m_GUID: 2312060258cca864fa4bf06200dc6dd7
     m_Address: Cube

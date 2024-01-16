@@ -17,8 +17,28 @@ public class AddressablesAutoGroupWindow : EditorWindow
     private AddressableAssetSettings setting;
     private string defaultProfileName = "";
 
-    string aaResForderRemotePath = "";
-    string aaResForderLocalPath = "";
+    const string aaResForderName = "AddressablesResources";
+
+    public static string aaResForderRemotePath
+    {
+        get
+        {
+            return Path.Combine(
+                Application.dataPath,
+                aaResForderName,
+                "Remote");
+        }
+    }
+    public static string aaResForderLocalPath
+    {
+        get
+        {
+            return Path.Combine(
+                Application.dataPath,
+                aaResForderName,
+                "Local");
+        }
+    }
 
     HashSet<string[]> resKey = new HashSet<string[]>();
 
@@ -43,18 +63,6 @@ public class AddressablesAutoGroupWindow : EditorWindow
         {
             setting = AssetDatabase.LoadAssetAtPath<AddressableAssetSettings>("Assets/AddressableAssetsData/AddressableAssetSettings.asset");
         }
-
-        //初始化资源路径
-        aaResForderRemotePath =
-            Path.Combine(
-                Application.dataPath,
-                rootVisualElement.Q<TextField>("ResForderTxtField").text,
-                "Remote");
-        aaResForderLocalPath =
-            Path.Combine(
-                Application.dataPath,
-                rootVisualElement.Q<TextField>("ResForderTxtField").text,
-                "Local");
 
         root.Q<Button>("InitBtn").clicked += InitAddressables;
         root.Q<Button>("CreateForderBtn").clicked += OnCreateForderBtnClick;
@@ -157,25 +165,7 @@ public class AddressablesAutoGroupWindow : EditorWindow
             return;
         }
         MarkStatus();
-        if (rootVisualElement.Q<Toggle>("GenerateEnumToggle").value)
-        {
-            string forderPath = Path.Combine(Application.dataPath, rootVisualElement.Q<TextField>().text);
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("public enum ADDRESSABLES_RESOURCES{");
-            foreach (var item in resKey)
-            {
-                string str = "";
-                foreach (var r in item)
-                {
-                    str += r.ToString();
-                }
-                Debug.Log(str);
-            }
-
-            stringBuilder.Append("}");
-
-            resKey.Clear();
-        }
+        GenerateEnumClass();
 
     }
     //根据资源分类Remote和Local
@@ -244,7 +234,6 @@ public class AddressablesAutoGroupWindow : EditorWindow
                     //Debug.Log("Label:" + info.Name + " " + "File:" + files[i]);
                     //通过HashSet集合来管理Label，如果HashSet中已经存在该值，则什么也不做
                     string[] labels = subGroupName.Split("_");
-                    resKey.Add(labels);
                     for (int j = 0; j < labels.Length; j++)
                     {
                         entry.SetLabel(labels[j], true, true);
@@ -261,12 +250,15 @@ public class AddressablesAutoGroupWindow : EditorWindow
 
     private void OnGenerateEnumClassBtn()
     {
-        string path = Path.Combine(Application.dataPath, rootVisualElement.Q<TextField>().text);
+        GenerateEnumClass();
+    }
+    private void GenerateEnumClass()
+    {
+        string path = Path.Combine(Application.dataPath, aaResForderName);
         DirectoryInfo[] subForders =
             new DirectoryInfo(path).GetDirectories();
         for (int i = 0; i < subForders.Length; i++)
         {
-            //Debug.Log(subForders[i].FullName);
             GetAddressablesResKey(subForders[i]);
         }
 
@@ -281,7 +273,7 @@ public class AddressablesAutoGroupWindow : EditorWindow
         }
 
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.Append("enum ADDRESSABLES_RESOURCES \n{\n");
+        stringBuilder.Append("public enum ADDRESSABLES_RESOURCES \n{\n");
         foreach (var item in resKey)
         {
             string itemStr = "";
@@ -289,21 +281,23 @@ public class AddressablesAutoGroupWindow : EditorWindow
             {
                 if (i == 0)
                 {
-                    itemStr = "    "+item[i];
+                    itemStr = "    " + item[i];
                 }
                 else
                 {
                     itemStr = itemStr + "_" + item[i];
                 }
             }
-            stringBuilder.Append(itemStr+",\n");
+            stringBuilder.Append(itemStr + ",\n");
 
         }
 
         stringBuilder.Append("\n}");
         Debug.Log(stringBuilder.ToString());
         //写入文件
-        string scriptPath = Path.Combine(path, "AddressablesResEnum.cs");
+
+        string scriptPath =
+            Path.Combine(Application.dataPath, "CFramework", "Addressables", "AddressablesResEnum.cs");
         FileStream file = new FileStream(scriptPath, FileMode.Create);
         StreamWriter fileW = new StreamWriter(file, System.Text.Encoding.UTF8);
         fileW.Write(stringBuilder);
@@ -356,7 +350,6 @@ public class AddressablesAutoGroupWindow : EditorWindow
         if (!Directory.Exists(aaResForderLocalPath))
         {
             Directory.CreateDirectory(aaResForderLocalPath);
-
         }
         AssetDatabase.Refresh();
     }

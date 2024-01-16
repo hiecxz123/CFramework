@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Local_Sprite
   m_Data:
     m_SerializedData: []
-  m_GUID: e1097c66874a301489a74b8e7237008e
+  m_GUID: d0d116acc294b3a498968372bf3a7bba
   m_SerializeEntries:
   - m_GUID: 008980a1f06ba3147ad054dd3ea628da
     m_Address: Circle

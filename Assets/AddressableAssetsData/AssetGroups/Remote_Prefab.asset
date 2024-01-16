@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Remote_Prefab
   m_Data:
     m_SerializedData: []
-  m_GUID: e959a66eefdd99b47b95e5ef07851b9a
+  m_GUID: 0fbbbd7e83d6108419623ac45ff1f45f
   m_SerializeEntries:
   - m_GUID: fc1817967b9cd834eb2502f26cc8e55f
     m_Address: Capsule

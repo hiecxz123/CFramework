@@ -15,10 +15,18 @@ MonoBehaviour:
   m_GroupName: Local_UI_Main
   m_Data:
     m_SerializedData: []
-  m_GUID: 23d494b71c0a50d428bcfd5f8d70b399
+  m_GUID: 9a2a3b2ca4051f74e910b00e2dfc0eb1
   m_SerializeEntries:
   - m_GUID: 68b7cd3c46adf92488cf0fcdd6390145
     m_Address: Main
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Local
+    - UI
+    - Main
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19a35aa6c905f91408d7f11900c2ad2a
+    m_Address: TestMainPanel
     m_ReadOnly: 0
     m_SerializedLabels:
     - Local
